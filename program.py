@@ -53,10 +53,10 @@ def subnetMaskBinary(cidr):
     l2 = []
     l3 = []
     l4 = []
-    initialPop = int(cidr/8)
+    fillNum = int(cidr/8)
     initialRemainder = cidr % 8
 
-    if initialPop == 4:
+    if fillNum == 4:
         l1 = [True]*8
         l2 = [True]*8
         l3 = [True]*8
@@ -66,7 +66,7 @@ def subnetMaskBinary(cidr):
         list.append(l3)
         list.append(l4)
 
-    if initialPop == 3:
+    if fillNum == 3:
         l1 = [True]*8
         l2 = [True]*8
         l3 = [True]*8
@@ -80,7 +80,7 @@ def subnetMaskBinary(cidr):
         list.append(l3)
         list.append(l4)
 
-    if initialPop == 2:
+    if fillNum == 2:
         l1 = [True]*8
         l2 = [True]*8
         diff = 8 - initialRemainder
@@ -94,7 +94,7 @@ def subnetMaskBinary(cidr):
         list.append(l3)
         list.append(l4)
 
-    if initialPop == 1:
+    if fillNum == 1:
         l1 = [True]*8
         l3 = [False]*8
         l4 = [False]*8
@@ -108,7 +108,7 @@ def subnetMaskBinary(cidr):
         list.append(l3)
         list.append(l4)
 
-    if initialPop == 0:
+    if fillNum == 0:
         diff = 8 - initialRemainder
         l1 = [True] * initialRemainder
         while diff > 0:
@@ -131,10 +131,10 @@ def subnetMaskBinaryInverse(cidr):
     l2 = []
     l3 = []
     l4 = []
-    initialPop = int(cidr/8)
+    fillNum = int(cidr/8)
     initialRemainder = cidr % 8
 
-    if initialPop == 4:
+    if fillNum == 4:
         l1 = [False]*8
         l2 = [False]*8
         l3 = [False]*8
@@ -144,7 +144,7 @@ def subnetMaskBinaryInverse(cidr):
         list.append(l3)
         list.append(l4)
 
-    if initialPop == 3:
+    if fillNum == 3:
         l1 = [False]*8
         l2 = [False]*8
         l3 = [False]*8
@@ -158,7 +158,7 @@ def subnetMaskBinaryInverse(cidr):
         list.append(l3)
         list.append(l4)
 
-    if initialPop == 2:
+    if fillNum == 2:
         l1 = [False]*8
         l2 = [False]*8
         diff = 8 - initialRemainder
@@ -172,7 +172,7 @@ def subnetMaskBinaryInverse(cidr):
         list.append(l3)
         list.append(l4)
 
-    if initialPop == 1:
+    if fillNum == 1:
         l1 = [False]*8
         l3 = [True]*8
         l4 = [True]*8
@@ -186,7 +186,7 @@ def subnetMaskBinaryInverse(cidr):
         list.append(l3)
         list.append(l4)
 
-    if initialPop == 0:
+    if fillNum == 0:
         diff = 8 - initialRemainder
         l1 = [False] * initialRemainder
         while diff > 0:
